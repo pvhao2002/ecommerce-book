@@ -1,0 +1,70 @@
+spring:
+  application:
+      name: app-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/app?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        use_sql_comments: true
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 9605
+  address: 0.0.0.0
+  servlet:
+    context-path: /app
+
+jwt:
+  secret: qD9JxK2r7M8zP4uT1bV6yL3cN9eH5wR2fG8aS0dX7
+  expiration: 864000000000000
+  refresh:
+    expiration: 60480000000000
+
+logging:
+  level:
+    com:
+      medicine: INFO
+  file:
+    name: logs/app.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+  health:
+    db:
+      enabled: true
+    diskspace:
+      enabled: true
+  metrics:
+    tags:
+      application: app-backend-api
+
+payment:
+  vnpay:
+    tmn-code: ${VNPAY_TMN_CODE:LJO6F60P}
+    hash-secret: ${VNPAY_HASH_SECRET:A6DRK4GF3NCZG7FUS8RUETBKD75OJ4AD}
+    url: ${VNPAY_URL:https://sandbox.vnpayment.vn/paymentv2/vpcpay.html}
+    return-url: ${VNPAY_RETURN_URL:http://localhost:9605/app/payment/vnpay/return}
+    version: 2.1.0
+    command: pay
+    order-type: other

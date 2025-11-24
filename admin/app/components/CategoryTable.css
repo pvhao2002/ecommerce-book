@@ -1,0 +1,133 @@
+/* ===== Wrapper ===== */
+.book-category-wrapper {
+    background: #FFF8F0; /* màu giấy */
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(87, 58, 40, 0.08);
+    font-family: 'Poppins', sans-serif;
+    color: #4E342E;
+}
+
+/* ===== Toolbar ===== */
+.book-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.book-toolbar h2 {
+    color: #6D4C41; /* nâu gỗ */
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.book-toolbar p {
+    font-size: 0.9rem;
+    color: #8D6E63;
+    margin-top: 4px;
+}
+
+/* Add Category Button */
+.add-btn {
+    background: linear-gradient(90deg, #8D6E63, #6D4C41); /* gỗ */
+    border: none;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #795548, #5D4037);
+}
+
+/* ===== Table Container ===== */
+.book-table-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(87, 58, 40, 0.08);
+    overflow-x: auto;
+}
+
+/* ===== Table ===== */
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.book-table th,
+.book-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #D7CCC8;
+    text-align: left;
+}
+
+.book-table th {
+    background: #EFE3D7; /* giấy cổ */
+    color: #6D4C41;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.book-table tbody tr:hover {
+    background: #FAF3EB;
+    transition: background 0.2s ease;
+}
+
+/* ===== Buttons ===== */
+.edit-btn,
+.delete-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Edit = màu nâu sáng */
+.edit-btn {
+    background: #8D6E63;
+    color: white;
+    margin-right: 8px;
+}
+
+.edit-btn:hover {
+    background: #6D4C41;
+}
+
+/* Delete = đỏ nâu */
+.delete-btn {
+    background: #B71C1C;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #8A1313;
+}
+
+.no-data {
+    text-align: center;
+    color: #A1887F;
+    font-style: italic;
+    padding: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .book-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+}

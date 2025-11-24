@@ -1,0 +1,210 @@
+/* ===== Container ===== */
+.book-product-wrapper {
+    background: #FFF8F0; /* giấy */
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(87, 58, 40, 0.08);
+    color: #4E342E;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Toolbar ===== */
+.book-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.book-toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.book-toolbar-left h2 {
+    color: #6D4C41;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.book-toolbar-left input {
+    border: 1px solid #D7CCC8;
+    border-radius: 10px;
+    padding: 8px 14px;
+    background: #FFF;
+    min-width: 250px;
+    outline: none;
+    color: #4E342E;
+    transition: all 0.2s ease;
+}
+
+.book-toolbar-left input:focus {
+    border-color: #A1887F;
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.25);
+}
+
+/* Add Book Button */
+.add-btn {
+    background: linear-gradient(90deg, #8D6E63, #6D4C41);
+    border: none;
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #795548, #5D4037);
+}
+
+/* ===== Table ===== */
+.book-table-container {
+    background: #fff;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(87, 58, 40, 0.08);
+}
+
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.book-table th,
+.book-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #D7CCC8;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.book-table th {
+    background: #EFE3D7;
+    color: #6D4C41;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.book-table tbody tr:hover {
+    background: #FAF3EB;
+}
+
+/* ===== Book Cover ===== */
+.thumb {
+    width: 55px;
+    height: 55px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #D7CCC8;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.thumb:hover {
+    transform: scale(1.1);
+}
+
+.no-img {
+    color: #A1887F;
+    font-size: 12px;
+}
+
+/* ===== Status ===== */
+.status-active {
+    color: #388E3C;
+    font-weight: 600;
+}
+
+.status-inactive {
+    color: #B71C1C;
+    font-weight: 600;
+}
+
+/* ===== Buttons ===== */
+.edit-btn,
+.delete-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    background: #8D6E63;
+    color: #fff;
+    margin-right: 6px;
+}
+
+.edit-btn:hover {
+    background: #6D4C41;
+}
+
+.delete-btn {
+    background: #FEE2E2;
+    color: #B71C1C;
+}
+
+.delete-btn:hover {
+    background: #FCA5A5;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.25rem;
+    gap: 10px;
+}
+
+.page-btn {
+    background: #8D6E63;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.page-btn:hover {
+    background: #6D4C41;
+}
+
+.page-btn:disabled {
+    background: #E0D1C4;
+    color: #6D4C41;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 0.9rem;
+    color: #5D4037;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .book-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .book-toolbar-left input {
+        width: 100%;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+}

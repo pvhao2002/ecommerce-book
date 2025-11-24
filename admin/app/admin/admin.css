@@ -1,0 +1,159 @@
+/* Layout tổng */
+.pharma-admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #F9FAFB;
+    color: #1F2937;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pharma-admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pharma-admin-content {
+    padding: 2rem;
+    flex: 1;
+}
+
+/* Sidebar */
+.pharma-sidebar {
+    width: 180px;
+    background: linear-gradient(180deg, #00ADEF, #009688);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sidebar-logo .logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.sidebar-logo small {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+.pharma-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pharma-sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.menu-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: transparent;
+    color: #f0fdfa;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.menu-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+li.active .menu-link {
+    background: #F57C00;
+    color: #fff;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Header */
+.pharma-header {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #009688;
+}
+
+.header-icon {
+    color: #00ADEF;
+    width: 24px;
+    height: 24px;
+}
+
+.logout-icon {
+    cursor: pointer;
+    color: #F57C00;
+    transition: all 0.2s ease;
+}
+
+.logout-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Dashboard content base style */
+.dashboard-container {
+    padding: 1.5rem;
+    background-color: #F9FAFB;
+    min-height: 100vh;
+}
+
+.dashboard-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #00ADEF;
+}
+
+.dashboard-sub {
+    color: #475569;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #00ADEF;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card.revenue {
+    border-left-color: #16A34A;
+}

@@ -1,0 +1,134 @@
+/* ===== Container ===== */
+.book-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #FFF8F0; /* giấy */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(87, 58, 40, 0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #4E342E;
+}
+
+/* ===== Labels ===== */
+.book-product-form label {
+    font-weight: 700;
+    color: #6D4C41;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* ===== Inputs ===== */
+.book-product-form input,
+.book-product-form select,
+.book-product-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #D7CCC8; /* viền nâu nhạt */
+    background: #FFF;
+    font-size: 0.95rem;
+    color: #4E342E;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-product-form input:focus,
+.book-product-form select:focus,
+.book-product-form textarea:focus {
+    border-color: #8D6E63;
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.25);
+    outline: none;
+}
+
+.book-product-form textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+/* ===== Grid layout ===== */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+/* ===== Image preview ===== */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.image-preview-wrapper {
+    position: relative;
+}
+
+.preview-img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #D7CCC8;
+    box-shadow: 0 2px 6px rgba(87, 58, 40, 0.15);
+}
+
+.remove-img {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #B71C1C;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+/* ===== Buttons ===== */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.save-btn {
+    background: linear-gradient(90deg, #8D6E63, #6D4C41);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+.cancel-btn {
+    background: #E6D8CA;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    color: #5D4037;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background: #D8C4B6;
+}
+
+/* ===== Error ===== */
+.error-text {
+    color: #B71C1C;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}

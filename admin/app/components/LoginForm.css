@@ -1,0 +1,111 @@
+/* Nền tổng thể */
+.book-login-page {
+    background: linear-gradient(135deg, #F5EDE0 0%, #FFFDF8 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Lớp overlay form */
+.book-overlay {
+    background: rgba(255, 252, 245, 0.95);
+    border-radius: 20px;
+    padding: 40px 50px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(121, 85, 72, 0.25);
+    border: 1px solid rgba(121, 85, 72, 0.2);
+}
+
+/* Nội dung form */
+.login-card {
+    text-align: center;
+    color: #4E342E;
+}
+
+.brand {
+    font-size: 30px;
+    font-weight: 700;
+    color: #8D6E63;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #5D4037;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+/* Ô input */
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #4E342E;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #D7CCC8;
+    background: #FFFBF6;
+    color: #4E342E;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input-group input::placeholder {
+    color: #A1887F;
+}
+
+.input-group input:focus {
+    border-color: #8D6E63;
+    box-shadow: 0 0 4px rgba(121, 85, 72, 0.3);
+}
+
+/* Nút đăng nhập */
+.login-btn {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #8D6E63, #6D4C41);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.03);
+    background: linear-gradient(90deg, #795548, #5D4037);
+}
+
+/* Thông báo lỗi */
+.error {
+    color: #C62828;
+    font-size: 13px;
+    margin-bottom: 10px;
+    background: rgba(198, 40, 40, 0.08);
+    border-radius: 6px;
+    padding: 6px;
+}
+
+/* Ghi chú */
+.note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #6D4C41;
+    opacity: 0.8;
+}

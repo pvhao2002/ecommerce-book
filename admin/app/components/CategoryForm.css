@@ -1,0 +1,120 @@
+/* ===== Form Container ===== */
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(120, 80, 50, 0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #4E342E; /* màu nâu */
+}
+
+/* ===== Title ===== */
+.form-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #6D4C41; /* nâu gỗ */
+    border-bottom: 2px solid #F3E5D8;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+/* ===== Form Fields ===== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #8D6E63;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #D7CCC8;
+    background: #FFF8F0; /* màu giấy */
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #A1887F;
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.25);
+    background: #fff;
+}
+
+.form-group textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+/* ===== Actions ===== */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* ===== Cancel Button ===== */
+.cancel-btn {
+    background: #EFE3D7;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 16px;
+    color: #5D4037;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #E0D1C4;
+}
+
+/* ===== Save Button ===== */
+.save-btn {
+    background: linear-gradient(90deg, #8D6E63, #6D4C41);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.save-btn:hover {
+    transform: scale(1.03);
+    background: linear-gradient(90deg, #795548, #5D4037);
+}
+
+.save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .book-form {
+        padding: 1.25rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
