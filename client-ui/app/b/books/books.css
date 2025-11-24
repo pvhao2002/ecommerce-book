@@ -1,0 +1,77 @@
+.book-list-wrapper {
+    padding: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+/* ===== FILTER BAR ===== */
+.filter-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-bar input,
+.filter-bar select {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    min-width: 150px;
+    background: #fff;
+    transition: 0.2s;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== GRID ===== */
+.books-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+/* ===== BOOK ITEM ===== */
+.book-card {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.25s ease;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.book-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.book-card:hover .book-img {
+    transform: scale(1.05);
+}
+
+.price {
+    color: #0d9488;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.no-data {
+    text-align: center;
+    margin-top: 20px;
+    color: #6b7280;
+    font-style: italic;
+}

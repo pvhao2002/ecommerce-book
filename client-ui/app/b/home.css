@@ -1,0 +1,314 @@
+.home-wrapper {
+    font-family: 'Poppins', sans-serif;
+    color: #4E342E;
+}
+
+/* ====== Banner ====== */
+.home-banner {
+    background: url('/assets/banner.png'), linear-gradient(90deg, #6D4C41, #8D6E63);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 40px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.home-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(60, 40, 30, 0.45);
+    border-radius: inherit;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.banner-content p {
+    margin-top: 6px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.banner-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 26px;
+    background: #FBE9E0;
+    color: #6D4C41;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.banner-btn:hover {
+    transform: scale(1.05);
+    background: #FFE3C2;
+}
+
+/* ====== Sections ====== */
+.section {
+    margin-top: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #6D4C41;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+/* ====== Categories ====== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+}
+
+.category-card {
+    background: #EFE3D7;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #4E342E;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(87, 58, 40, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    background: #E6D5C8;
+}
+
+/* ====== Products grid ====== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(87, 58, 40, 0.1);
+}
+
+.product-img {
+    height: 180px;
+    border-radius: 10px;
+    background: #D7CCC8;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #d7ccc8 25%, #efebe9 50%, #d7ccc8 75%);
+    background-size: 400% 100%;
+    animation: skeleton 1.4s ease infinite;
+}
+
+@keyframes skeleton {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.product-name {
+    font-weight: 600;
+    margin-top: 10px;
+    color: #5D4037;
+}
+
+.product-price {
+    margin-top: 4px;
+    font-weight: 700;
+    color: #8D6E63;
+}
+
+/* ===== Best sellers carousel ===== */
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 10px;
+}
+
+.carousel-item {
+    min-width: 160px;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+    margin-top: 60px;
+    text-align: center;
+    background: #6D4C41;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 14px;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 24px;
+    background: #FFE3C2;
+    color: #6D4C41;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cta-btn:hover {
+    background: #F5D1A8;
+    transform: scale(1.04);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSlow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Section fade-in */
+.section {
+    animation: fadeIn 0.7s ease forwards;
+}
+
+/* Delay each section for cascade effect */
+.section:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.section:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.section:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.section:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+/* ========== PRODUCT hover effect ========== */
+.product-card {
+    transition: all 0.25s ease;
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+.product-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Image zoom on hover */
+.product-card .product-img {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.08);
+}
+
+/* ========== CATEGORY hover effect ========== */
+.category-card {
+    transition: all 0.3s ease;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+}
+
+.category-card:hover {
+    background: #f0f9ff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(41, 121, 255, 0.15);
+}
+
+/* ========== Banner animation + parallax ========== */
+.home-banner {
+    animation: fadeInSlow 1.4s ease forwards;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax */
+}
+
+.banner-content h1,
+.banner-content p,
+.banner-btn {
+    animation: fadeIn 1s ease forwards;
+}
+
+.banner-content h1 {
+    animation-delay: 0.2s;
+}
+
+.banner-content p {
+    animation-delay: 0.4s;
+}
+
+.banner-btn {
+    animation-delay: 0.6s;
+}
+
+/* CTA pop */
+.cta-section {
+    animation: popIn 0.7s ease forwards;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 128, 255, 0.25);
+}
