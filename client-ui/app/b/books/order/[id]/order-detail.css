@@ -1,0 +1,114 @@
+.order-detail-wrapper {
+    padding: 2rem;
+    background: #f9fafb;
+    font-family: 'Inter', sans-serif;
+}
+
+.order-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1e3a8a;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.4rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1.4rem;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+/* ===== STATUS BADGES ===== */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.status-badge.pending {
+    background: #fbbf24;
+}
+
+.status-badge.processing {
+    background: #3b82f6;
+}
+
+.status-badge.delivered {
+    background: #10b981;
+}
+
+.status-badge.cancelled {
+    background: #ef4444;
+}
+
+/* ===== PRODUCT ITEMS ===== */
+.item-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 0;
+    gap: 1rem;
+}
+
+.item-img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.item-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.price {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.item-total {
+    margin-left: auto;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.summary p,
+.summary h3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+}
+
+.summary .total {
+    color: #dc2626;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,46 @@
+<svg width="500" height="380" viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FFD6E8"/>
+            <stop offset="100%" stop-color="#D7EAFB"/>
+        </linearGradient>
+    </defs>
+
+    <rect width="500" height="380" rx="24" fill="url(#grad)"/>
+
+    <!-- Decorative circles -->
+    <circle cx="120" cy="70" r="45" fill="#FCE4EC" opacity="0.6"/>
+    <circle cx="420" cy="260" r="60" fill="#E3F2FD" opacity="0.5"/>
+    <circle cx="380" cy="90" r="35" fill="#F8BBD0" opacity="0.35"/>
+
+    <!-- Stack of books -->
+    <g transform="translate(50,120)">
+        <!-- Book 1 -->
+        <rect x="0" y="80" width="180" height="26" rx="4" fill="#90CAF9"/>
+        <rect x="0" y="80" width="180" height="6" fill="white" opacity="0.6"/>
+
+        <!-- Book 2 -->
+        <rect x="30" y="45" width="200" height="30" rx="4" fill="#CE93D8"/>
+        <rect x="30" y="45" width="200" height="6" fill="white" opacity="0.6"/>
+
+        <!-- Book 3 -->
+        <rect x="20" y="0" width="230" height="38" rx="4" fill="#8BC34A"/>
+        <rect x="20" y="0" width="230" height="6" fill="white" opacity="0.6"/>
+    </g>
+
+    <!-- Open Book -->
+    <g transform="translate(250,140)">
+        <path d="M20 80C20 50 60 30 100 30C140 30 180 50 180 80V100C180 105 175 110 170 110H30C25 110 20 105 20 100V80Z"
+              fill="white"/>
+        <line x1="70" y1="50" x2="130" y2="50" stroke="#B0BEC5" stroke-width="3" opacity="0.8"/>
+        <line x1="70" y1="70" x2="130" y2="70" stroke="#CFD8DC" stroke-width="2" opacity="0.8"/>
+    </g>
+
+    <!-- Decorative sparkles -->
+    <g fill="#F48FB1" opacity="0.75">
+        <circle cx="310" cy="60" r="5"/>
+        <circle cx="330" cy="45" r="3"/>
+        <circle cx="350" cy="65" r="4"/>
+    </g>
+
+</svg>

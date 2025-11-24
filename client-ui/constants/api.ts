@@ -4,7 +4,7 @@ export const API_BASE_URL =
 
 export const API_ENDPOINTS = {
     AUTH: {
-        LOGIN: `${API_BASE_URL}/auth/login-admin`,
+        LOGIN: `${API_BASE_URL}/auth/login`,
         REGISTER: `${API_BASE_URL}/auth/register`,
         PROFILE: `${API_BASE_URL}/auth/profile`,
     },
@@ -16,7 +16,7 @@ export const API_ENDPOINTS = {
         ADMIN: `${API_BASE_URL}/admin/products`
     },
     USERS: {
-        BASE: `${API_BASE_URL}/admin/users`,
+        BASE: `${API_BASE_URL}/users`,
     },
     ORDERS: {
         BASE: `${API_BASE_URL}/admin/orders`,

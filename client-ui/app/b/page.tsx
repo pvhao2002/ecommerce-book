@@ -6,6 +6,7 @@ import {API_ENDPOINTS} from '@/constants/api';
 import apiClient from '@/api/apiClient';
 
 import {useState, useEffect} from "react";
+import Link from "next/link";
 
 export default function Page() {
     const [categories, setCategories] = useState<CategoryDTO[]>([]);
@@ -58,7 +59,7 @@ export default function Page() {
                 <div className="banner-content">
                     <h1>Khám Phá Cuốn Sách Yêu Thích Tiếp Theo Của Bạn 📚</h1>
                     <p>Hàng ngàn tựa sách chất lượng cao thuộc mọi thể loại đang chờ bạn.</p>
-                    <a className="banner-btn" href="/books">Khám Phá Sách</a>
+                    <a className="banner-btn" href="/b/books">Khám Phá Sách</a>
                 </div>
             </section>
 
@@ -92,7 +93,11 @@ export default function Page() {
                         <p>Chưa có sách mới.</p>
                     ) : (
                         newProducts.map((p) => (
-                            <div key={p.id} className="product-card">
+                            <Link
+                                key={p.id}
+                                href={`/b/books/${p.id}`}
+                                className="product-card product-link"
+                            >
                                 <img
                                     src={p.images?.[0] || "/no-image.jpg"}
                                     className="product-img"
@@ -102,7 +107,7 @@ export default function Page() {
                                 <p className="product-price">
                                     {p.price.toLocaleString("vi-VN")} ₫
                                 </p>
-                            </div>
+                            </Link>
                         ))
                     )}
                 </div>
@@ -118,7 +123,11 @@ export default function Page() {
                         <p>Chưa có sách bán chạy.</p>
                     ) : (
                         trendingProducts.map((p) => (
-                            <div key={p.id} className="product-card carousel-item">
+                            <Link
+                                key={p.id}
+                                href={`/b/books/${p.id}`}
+                                className="product-card carousel-item product-link"
+                            >
                                 <img
                                     src={p.images?.[0] || "/no-image.jpg"}
                                     className="product-img"
@@ -128,7 +137,7 @@ export default function Page() {
                                 <p className="product-price">
                                     {p.price.toLocaleString("vi-VN")} ₫
                                 </p>
-                            </div>
+                            </Link>
                         ))
                     )}
                 </div>
