@@ -5,6 +5,7 @@ import './profile.css';
 import {useRouter} from "next/navigation";
 import apiClient from "@/api/apiClient";
 import {API_ENDPOINTS} from "@/constants/api";
+import {log} from "node:util";
 
 export default function ProfilePage() {
     const [activeTab, setActiveTab] = useState('info');
@@ -199,7 +200,7 @@ function OrderHistory() {
 
     useEffect(() => {
         apiClient.get("/orders/my-orders")
-            .then(res => setOrders(res.data))
+            .then(res => setOrders(res.data.content))
             .catch(() => {
             });
     }, []);
@@ -213,6 +214,7 @@ function OrderHistory() {
                 <tr>
                     <th>Mã ĐH</th>
                     <th>Ngày Mua</th>
+                    <th>Phương thức</th>
                     <th>Trạng Thái</th>
                     <th>Tổng Tiền</th>
                 </tr>
@@ -225,9 +227,11 @@ function OrderHistory() {
                     </tr>
                 ) : (
                     orders.map((o: any) => (
-                        <tr key={o.id}>
-                            <td>{o.code}</td>
-                            <td>{new Date(o.createdAt).toLocaleDateString()}</td>
+                        <tr className={"hover:cursor-pointer hover:bg-background hover:text-amber-50"} key={o.id}
+                            onClick={() => window.location.href = `/b/order/${o.id}`}>
+                            <td>{o.id}</td>
+                            <td>{new Date(o.createdAt).toLocaleString()}</td>
+                            <td>{o.paymentMethod}</td>
                             <td>{o.status}</td>
                             <td>{o.total.toLocaleString("vi-VN")} ₫</td>
                         </tr>

@@ -1,6 +1,6 @@
 // app/constants/api.ts
 export const API_BASE_URL =
-    process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:9605/app';
+    process.env.NEXT_PUBLIC_API_BASE_URL || 'http://192.168.2.53:9605/app';
 
 export const API_ENDPOINTS = {
     AUTH: {

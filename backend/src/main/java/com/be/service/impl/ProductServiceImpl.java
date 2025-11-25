@@ -3,7 +3,7 @@ package com.be.service.impl;
 import com.be.dto.common.PagedResponse;
 import com.be.dto.product.*;
 import com.be.entity.Category;
-import com.be.entity.Medicine;
+import com.be.entity.Product;
 import com.be.exception.ResourceNotFoundException;
 import com.be.exception.ValidationException;
 import com.be.repository.CategoryRepository;
@@ -64,7 +64,7 @@ public class ProductServiceImpl implements ProductService {
     public PagedResponse<ProductResponse> getAllProducts(int page, int size, Long categoryId, String search,
                                                          BigDecimal minPrice, BigDecimal maxPrice) {
         var pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
-        Page<Medicine> productPage;
+        Page<Product> productPage;
 
         productPage = productRepository.findWithFilters(categoryId, search, minPrice, maxPrice, pageable);
 
@@ -133,7 +133,7 @@ public class ProductServiceImpl implements ProductService {
     public ProductResponse createProduct(CreateProductRequest request) {
         Category category = categoryRepository.findById(request.getCategoryId())
                 .orElseThrow(() -> new ResourceNotFoundException("Category", "id", request.getCategoryId()));
-        Medicine product = Medicine.builder()
+        Product product = Product.builder()
                 .name(request.getName())
                 .description(request.getDescription())
                 .unitPrice(request.getPrice())
@@ -240,7 +240,7 @@ public class ProductServiceImpl implements ProductService {
         categoryRepository.delete(category);
     }
 
-    private ProductResponse convertToProductResponse(Medicine product) {
+    private ProductResponse convertToProductResponse(Product product) {
         return ProductResponse.builder()
                 .id(product.getId())
                 .name(product.getName())
@@ -255,7 +255,7 @@ public class ProductServiceImpl implements ProductService {
                 .build();
     }
 
-    private ProductDetailResponse convertToProductDetailResponse(Medicine product) {
+    private ProductDetailResponse convertToProductDetailResponse(Product product) {
         return ProductDetailResponse.builder()
                 .id(product.getId())
                 .name(product.getName())

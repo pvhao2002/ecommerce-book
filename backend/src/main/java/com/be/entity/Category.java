@@ -26,5 +26,5 @@ public class Category {
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @Builder.Default
-    private List<Medicine> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 }

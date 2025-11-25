@@ -1,6 +1,6 @@
 package com.be.repository;
 
-import com.be.entity.Medicine;
+import com.be.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Medicine, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("""
                     SELECT p
                   FROM OrderItem oi
@@ -20,31 +20,31 @@ public interface ProductRepository extends JpaRepository<Medicine, Long> {
                   GROUP BY p.id
                   ORDER BY SUM(oi.quantity) DESC
             """)
-    List<Medicine> findTrendingProducts(Pageable pageable);
-    List<Medicine> findTop20ByIsActiveTrueOrderByUnitPrice();
+    List<Product> findTrendingProducts(Pageable pageable);
+    List<Product> findTop20ByIsActiveTrueOrderByUnitPrice();
 
-    List<Medicine> findTop20ByIsActiveTrueOrderByCreatedAtDesc();
+    List<Product> findTop20ByIsActiveTrueOrderByCreatedAtDesc();
 
-    List<Medicine> findAllByIdIn(List<Long> ids);
+    List<Product> findAllByIdIn(List<Long> ids);
 
-    @Query("SELECT DISTINCT p FROM Medicine p " +
+    @Query("SELECT DISTINCT p FROM Product p " +
             "LEFT JOIN FETCH p.category " +
             "LEFT JOIN FETCH p.images " +
             "WHERE (LOWER(p.name) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR " +
             "LOWER(p.description) LIKE LOWER(CONCAT('%', :searchTerm, '%'))) " +
             "AND p.isActive = true")
-    Page<Medicine> searchByNameOrDescription(@Param("searchTerm") String searchTerm, Pageable pageable);
+    Page<Product> searchByNameOrDescription(@Param("searchTerm") String searchTerm, Pageable pageable);
 
-    @Query("SELECT p FROM Medicine p WHERE " +
+    @Query("SELECT p FROM Product p WHERE " +
             "(:categoryId IS NULL OR p.category.id = :categoryId) AND " +
             "(:searchTerm IS NULL OR LOWER(p.name) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR " +
             "LOWER(p.description) LIKE LOWER(CONCAT('%', :searchTerm, '%'))) AND " +
             "(:minPrice IS NULL OR p.unitPrice >= :minPrice) AND " +
             "(:maxPrice IS NULL OR p.unitPrice <= :maxPrice) AND " +
             "p.isActive = true")
-    Page<Medicine> findWithFilters(@Param("categoryId") Long categoryId,
-                                   @Param("searchTerm") String searchTerm,
-                                   @Param("minPrice") BigDecimal minPrice,
-                                   @Param("maxPrice") BigDecimal maxPrice,
-                                   Pageable pageable);
+    Page<Product> findWithFilters(@Param("categoryId") Long categoryId,
+                                  @Param("searchTerm") String searchTerm,
+                                  @Param("minPrice") BigDecimal minPrice,
+                                  @Param("maxPrice") BigDecimal maxPrice,
+                                  Pageable pageable);
 }

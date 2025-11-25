@@ -47,8 +47,12 @@ export default function OrderDetailPage() {
                         </p>
 
                         <p>Ngày đặt: <strong>{new Date(order.createdAt).toLocaleString()}</strong></p>
-                        {order.completedAt && (
-                            <p>Hoàn thành: <strong>{new Date(order.completedAt).toLocaleString()}</strong></p>
+                        {order.deliveryDate && (
+                            <p>Hoàn thành: <strong>{new Date(order.deliveryDate).toLocaleString()}</strong></p>
+                        )}
+
+                        {order.shippingDate && (
+                            <p>Đang giao: <strong>{new Date(order.shippingDate).toLocaleString()}</strong></p>
                         )}
                     </div>
 
@@ -58,7 +62,7 @@ export default function OrderDetailPage() {
 
                         <p><strong>Người nhận:</strong> {order.customerName}</p>
                         <p><strong>Số điện thoại:</strong> {order.phone}</p>
-                        <p><strong>Địa chỉ:</strong> {order.address}</p>
+                        <p><strong>Địa chỉ:</strong> {order.shippingAddress}</p>
                     </div>
 
                 </div>
@@ -70,8 +74,8 @@ export default function OrderDetailPage() {
 
                         {order.items.map((item: any) => (
                             <div key={item.id} className="item-row">
-                                <Image
-                                    src={item.image}
+                                <img
+                                    src={item.medicineImages[0]}
                                     alt={item.name}
                                     width={70}
                                     height={90}
@@ -81,21 +85,21 @@ export default function OrderDetailPage() {
                                 <div className="item-info">
                                     <h3>{item.name}</h3>
                                     <p className="price">
-                                        {item.price.toLocaleString("vi-VN")} ₫
+                                        {item.unitPrice.toLocaleString("vi-VN")} ₫
                                     </p>
                                     <p>Số lượng: {item.quantity}</p>
                                 </div>
 
                                 <div className="item-total">
-                                    {(item.price * item.quantity).toLocaleString("vi-VN")} ₫
+                                    {(item.totalPrice).toLocaleString("vi-VN")} ₫
                                 </div>
                             </div>
                         ))}
 
                         {/* === SUMMARY === */}
                         <div className="summary">
-                            <p>Tạm tính: <span>{order.subTotal.toLocaleString("vi-VN")} ₫</span></p>
-                            <p>Phí vận chuyển: <span>{order.shippingFee.toLocaleString("vi-VN")} ₫</span></p>
+                            <p>Tạm tính: <span>{order.subtotal.toLocaleString("vi-VN")} ₫</span></p>
+                            <p>Phí vận chuyển: <span>{order.shipping.toLocaleString("vi-VN")} ₫</span></p>
                             <h3>Tổng cộng: <span className="total">{order.total.toLocaleString("vi-VN")} ₫</span></h3>
                         </div>
                     </div>

@@ -99,6 +99,7 @@ public class PaymentServiceImpl implements PaymentService {
             paymentResponse.setPaymentUrl(paymentUrl);
             paymentResponse.setGatewayTransactionId(order.getTrackingNumber());
             paymentResponse.setCreatedAt(LocalDateTime.now());
+            System.out.println("VNPay Payment URL: " + paymentUrl);
             return paymentResponse;
         } catch (Exception e) {
             throw new PaymentException("Failed to process VNPay payment: " + e.getMessage());

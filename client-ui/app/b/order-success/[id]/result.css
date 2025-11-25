@@ -1,0 +1,97 @@
+.result-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    background: #f3f4f6;
+}
+
+.result-card {
+    max-width: 500px;
+    width: 100%;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.result-card.success {
+    border-top: 6px solid #16a34a;
+}
+
+.result-card.failed {
+    border-top: 6px solid #dc2626;
+}
+
+.result-icon {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+.result-card h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.result-text {
+    color: #475569;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.result-order-code {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #334155;
+}
+
+.result-order-code span {
+    font-weight: 800;
+    color: #1d4ed8;
+}
+
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.btn-primary {
+    background: #1d4ed8;
+    color: white;
+    padding: 12px 0;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #1e40af;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #1f2937;
+    padding: 12px 0;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

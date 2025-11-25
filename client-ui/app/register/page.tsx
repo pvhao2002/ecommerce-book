@@ -54,7 +54,7 @@ export default function SignupPage() {
 
             {/* ===== Banner ===== */}
             <div className="signup-banner">
-                <h1>📚 Tham Gia BookNest</h1>
+                <a href="/b"><h1>📚 Tham Gia BookNest</h1></a>
                 <p>Nơi những người yêu sách kết nối và chia sẻ tri thức.</p>
                 <img src="/assets/signup_books.svg" alt="Books Signup"/>
             </div>
@@ -126,6 +126,9 @@ export default function SignupPage() {
 
                     <p className="login-text">
                         Đã có tài khoản? <a href="/login">Đăng nhập ngay</a>
+                    </p>
+                    <p className="login-text">
+                        Về <a href="/b">trang chủ</a>
                     </p>
                 </form>
             </div>

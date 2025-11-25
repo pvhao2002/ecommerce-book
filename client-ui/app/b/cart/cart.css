@@ -201,3 +201,19 @@
         opacity: 1;
     }
 }
+
+.recommend-grid img,
+.related-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* giữ đúng tỉ lệ 3:4 của sách */
+    object-fit: cover; /* cắt cho đẹp, không méo hình */
+    border-radius: 8px;
+    background: #f3f4f6;
+}
+
+.related-card:hover img,
+.recommend-card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+

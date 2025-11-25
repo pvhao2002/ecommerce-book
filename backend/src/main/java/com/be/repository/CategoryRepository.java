@@ -12,6 +12,6 @@ import java.util.Optional;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     Optional<Category> findByNameIgnoreCase(String name);
     boolean existsByNameIgnoreCase(String name);
-    @Query("SELECT DISTINCT c FROM Category c WHERE EXISTS (SELECT p FROM Medicine p WHERE p.category = c AND p.isActive = true)")
+    @Query("SELECT DISTINCT c FROM Category c WHERE EXISTS (SELECT p FROM Product p WHERE p.category = c AND p.isActive = true)")
     List<Category> findCategoriesWithActiveProducts();
 }

@@ -36,7 +36,7 @@ export default function LoginPage() {
 
             {/* ===== Left banner ===== */}
             <div className="login-banner">
-                <h1>📚 BookNest</h1>
+                <a href="/b"><h1>📚 BookNest</h1></a>
                 <p>Nơi những cuốn sách mở ra cả thế giới mới cho bạn.</p>
                 <Image src={'/assets/login_books.svg'} alt={'Books'}
                        width={300}
@@ -75,6 +75,9 @@ export default function LoginPage() {
 
                     <p className="signup-text">
                         Chưa có tài khoản? <a href="/register">Đăng ký ngay</a>
+                    </p>
+                    <p className="signup-text">
+                        Về <a href="/b">trang chủ</a>
                     </p>
                 </form>
             </div>

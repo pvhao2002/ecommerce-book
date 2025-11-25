@@ -1,21 +1,32 @@
 'use client';
-
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import {addToCart} from "@/utils/cart";
+import {useEffect, useState} from "react";
+import {useParams} from "next/navigation";
 import apiClient from "@/api/apiClient";
-import { API_ENDPOINTS } from "@/constants/api";
+import {API_ENDPOINTS} from "@/constants/api";
 import Image from "next/image";
 import Link from "next/link";
 import "./product-detail.css";
 
 export default function ProductDetailPage() {
-    const { id } = useParams();
+    const {id} = useParams();
 
     const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState<any>(null);
     const [related, setRelated] = useState<any[]>([]);
     const [selectedImg, setSelectedImg] = useState("");
     const [qty, setQty] = useState(1);
+    const handleAddToCart = () => {
+        addToCart({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            qty: qty,
+            image: product.images?.[0] || "",
+        });
+
+        alert("Đã thêm vào giỏ hàng!");
+    };
 
     useEffect(() => {
         const load = async () => {
@@ -34,7 +45,6 @@ export default function ProductDetailPage() {
                 setLoading(false);
             }
         };
-
         load();
     }, [id]);
 
@@ -67,7 +77,7 @@ export default function ProductDetailPage() {
                             className={`thumb ${selectedImg === img ? "active" : ""}`}
                             onClick={() => setSelectedImg(img)}
                         >
-                            <Image src={img} alt={`thumb-${i}`} width={70} height={90} />
+                            <Image src={img} alt={`thumb-${i}`} width={70} height={90}/>
                         </div>
                     ))}
                 </div>
@@ -91,7 +101,7 @@ export default function ProductDetailPage() {
                     <button onClick={increase}>+</button>
                 </div>
 
-                <button className="add-cart-btn">
+                <button className="add-cart-btn" onClick={handleAddToCart}>
                     🛒 Thêm {qty} vào giỏ hàng
                 </button>
 
@@ -111,7 +121,7 @@ export default function ProductDetailPage() {
                     <div className="related-grid">
                         {related.map((b) => (
                             <Link href={`/b/books/${b.id}`} key={b.id} className="related-card">
-                                <img src={b.images?.[0] || "/no-image.jpg"} />
+                                <img src={b.images?.[0] || "/no-image.jpg"}/>
                                 <h3>{b.name}</h3>
                                 <p>{b.price.toLocaleString("vi-VN")} ₫</p>
                             </Link>

@@ -4,8 +4,10 @@ import {useEffect, useState} from "react";
 import apiClient from "@/api/apiClient";
 import {API_ENDPOINTS} from "@/constants/api";
 import "./books.css";
+import {ProductDTO} from "@/app/model/ProductDTO";
+import {CategoryDTO} from "@/app/model/CategoryDTO";
+import Link from "next/link";
 
-import type {ProductDTO, CategoryDTO} from "@/types/product";
 
 export default function BooksPage() {
     const [books, setBooks] = useState<ProductDTO[]>([]);
@@ -140,15 +142,21 @@ export default function BooksPage() {
                     <p className="no-data">Không tìm thấy sách.</p>
                 ) : (
                     filtered.map((b) => (
-                        <div key={b.id} className="book-card">
-                            <img
-                                src={b.images?.[0] || "/no-image.jpg"}
-                                alt={b.name}
-                                className="book-img"
-                            />
-                            <h3>{b.name}</h3>
-                            <p className="price">{Number(b.price).toLocaleString("vi-VN")} ₫</p>
-                        </div>
+                        <Link
+                            key={b.id}
+                            href={`/b/books/${b.id}`}
+                            className="product-card product-link"
+                        >
+                            <div key={b.id} className="book-card">
+                                <img
+                                    src={b.images?.[0] || "/no-image.jpg"}
+                                    alt={b.name}
+                                    className="book-img"
+                                />
+                                <h3>{b.name}</h3>
+                                <p className="price">{Number(b.price).toLocaleString("vi-VN")} ₫</p>
+                            </div>
+                        </Link>
                     ))
                 )}
             </div>

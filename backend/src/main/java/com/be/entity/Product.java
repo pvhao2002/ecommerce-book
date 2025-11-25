@@ -17,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Medicine {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

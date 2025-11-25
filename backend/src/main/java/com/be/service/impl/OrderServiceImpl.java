@@ -50,8 +50,8 @@ public class OrderServiceImpl implements OrderService {
         var subtotal = BigDecimal.ZERO;
 
         for (var itemRequest : request.getItems()) {
-            var product = productRepository.findById(itemRequest.getMedicineId())
-                    .orElseThrow(() -> new ResourceNotFoundException("Product not found: " + itemRequest.getMedicineId()));
+            var product = productRepository.findById(itemRequest.getProductId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Product not found: " + itemRequest.getProductId()));
 
             if (!product.getIsActive()) {
                 throw new ValidationException("Medicine is not available: " + product.getName());
@@ -229,7 +229,7 @@ public class OrderServiceImpl implements OrderService {
 
 
     private OrderItemResponse mapToOrderItemResponse(OrderItem item) {
-        Medicine medicine = item.getMedicine();
+        Product medicine = item.getMedicine();
 
         return OrderItemResponse.builder()
                 .id(item.getId())
